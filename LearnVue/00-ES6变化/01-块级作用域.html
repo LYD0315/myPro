@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+<script>
+    //ES5 if for  都没有作用域，借助于function作用域的作用
+    //ES6中加入了 if  for 的块级作用域
+    
+    //1.区别
+    // {
+    //     var name = 'why';
+    //     console.log(name);
+    // }
+    // {
+    //     let name1 = 'code'
+    //     console.log(name1);
+    // }
+    // console.log(name);
+    // console.log(name1);
+
+    //2.没有块级作用域引起的问题
+    // var func;
+    //
+    // if(true){
+    //     var name = 'why';
+    //     func = function () {
+    //         console.log(name);
+    //     }
+    //     //func();
+    // }
+    // func();
+
+    //console.log(name);
+
+    //3.for的块级
+    //通过闭包解决，因为函数是一个作用域
+let btns = document.getElementsByTagName('button');
+for(let i =0 ; i<btns.length ; i++){
+    btns[i].addEventListener('click',function(){
+        console.log('第' + i +'个按钮被点击');
+    })
+}
+
+</script>
+</body>
+</html>

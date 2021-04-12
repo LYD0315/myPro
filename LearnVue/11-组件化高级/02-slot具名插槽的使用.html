@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <cpn><span slot="center">表土</span></cpn>
+    <cpn><span slot="left">表土</span></cpn>
+
+</div>
+<template id="cpn">
+    <div>
+        <slot name="left"><button>左边</button></slot>
+        <slot name="center"><span >中间</span></slot>
+        <slot name="right"><button>右边</button></slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: '你好'
+        },
+        components:{
+            cpn:{
+                template:'#cpn',
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

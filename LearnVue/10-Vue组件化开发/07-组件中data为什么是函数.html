@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--    如果不是函数的话复用时会相互影响-->
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <h2>当前计数:{{counter}}</h2>
+        <button id="btn1" @click="increment">+</button>
+        <button id="btn2" @click="decrement">-</button>
+    </div>
+
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component('cpn',{
+        template:'#cpn',
+        data(){
+            return{
+                counter:0
+            }
+        },
+        methods:{
+            increment(){
+                this.counter ++
+            },
+            decrement(){
+                this.counter --
+            }
+        }
+    })
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: '你好'
+        }
+    });
+</script>
+<script>
+    function abc(){
+        return{
+            name:'lyd',
+            age:'24'
+        }
+    }
+    let obj1 = abc()
+    let obj2 = abc()
+    let obj3 = abc()
+
+    obj1.name = 'kobe'
+    console.log(obj2);
+    console.log(obj3);
+
+</script>
+
+
+</body>
+</html>

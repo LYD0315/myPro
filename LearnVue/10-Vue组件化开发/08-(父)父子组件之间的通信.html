@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--通过properties(props)父组件向子组件传递数据-->
+<!--通过自定义事件可以向父组件传递数据 emit Events-->
+<div id="app">
+    <cpn :cmovies = "movies" v-bind:cmessage = "message"></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <p>{{cmovies}}</p>
+        <h2>{{cmessage}}</h2>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+<!--    父传子 props-->
+    const cpn={
+        template:'#cpn',
+        //可以是数组
+        //props:['cmovies','cmessage']
+        props:{
+            //1.可进行类型限制
+            // cmovies:Array,
+            // cmessage:String
+        //    2.可以赋值默认值
+            cmessage:{
+                type:String,
+                default:'aaaaaa',
+            },
+            //类型是对象或者数组时，默认值必须是一个函数
+            cmovies:{
+             type:Array,
+             default(){
+                 return []
+             }
+            }
+        }
+    }
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 'hello',
+            movies:['海王','海蜇','海胆']
+        },
+        components:{
+            cpn
+        }
+    });
+
+</script>
+</body>
+</html>

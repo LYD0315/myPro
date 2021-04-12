@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="item in letters" :key="item">
+            {{item}}
+        </li>
+    </ul>
+    <button @click="btnClick">按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            letters: ['a','b','c','d']
+        },
+        methods:{
+            btnClick:function(){
+                //push可以做到响应式
+                //this.letters.push('lyd')
+
+                //通过索引值修改数组元素不能做到响应式
+                //this.letters[0] = 'bbbbbbbb'
+
+                //pop删除数组最后一个元素也是响应式的
+                //this.letters.pop();
+
+                //shift方法删除数组中第一个元素
+                //this.letters.shift();
+
+                //unshift在数组最前面添加元素
+                this.letters.unshift('aaaa')
+
+
+
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

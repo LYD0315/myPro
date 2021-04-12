@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--在遍历过程中没有使用下标值-->
+    <ul>
+        <li v-for="item  in names">{{item}}</li>
+    </ul>
+    <!--在遍历过程中获取下标-->
+    <ul>
+        <li v-for="(item , index) in names">{{item}}.{{index+1}}</li>
+    </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            names: ['coder','kobe','why']
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{counter}}</h2>
+    <button @click="addClick(10)">+10</button>
+
+    <button @click="subClick(9)">-9</button>
+    <!--如果没有加括号，vue默认把event对象传入参数-->
+    <!--<button @click="subClick">-9</button>-->
+    <!--方法定义时，我们需要event对象，同时又需要其他参数-->
+    <!--调用方法时如何获取event   通过 $event-->
+    <button @click="btn3Click(num,$event)">btn3</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: "hello",
+            counter: 0
+        },
+        methods: {
+            addClick(num) {
+                this.counter += num;
+            },
+            subClick(num) {
+                this.counter -= num;
+            },
+            btn3Click(num,event){
+                console.log('------------------',123,event);
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+js/png/css
+
+webpack模块化打包
+webpack必须依赖node环境
+node环境为了可以正常执行很多代码，必须其中包含各种依赖的包
+依靠npm工具(node packages manager)
+node 版本 > v8.9
+全局安装webpack
+
+npm install

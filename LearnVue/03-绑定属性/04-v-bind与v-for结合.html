@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="(m,index) in movies"   @click="getClick()">{{m}}</li>
+    </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies:['金刚狼','LV巨人','美国队长'],
+            isActive:false,
+            isLine:true
+        },
+        methods:{
+            changeColor:function () {
+                return {active : isActive,line: isLine};
+            },
+            getClick:function () {
+                this.changeColor(),
+                    this.isActive = true
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数:{{con}}</h2>
+    <button @click="add">+</button>
+    <button @click="add">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const obj = {
+        con: 0
+    }
+    const app = new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+            add: function () {
+                this.con++;
+                console.log("计数+1");
+            },
+            sub: function () {
+                this.con--;
+                console.log("计数-1");
+            }
+        }
+    })
+</script>
+</body>
+</html>

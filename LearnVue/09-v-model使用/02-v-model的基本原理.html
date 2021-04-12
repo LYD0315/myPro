@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--通过v-on 和 v-bind  实现双向绑定-->
+<!--<div id="app">-->
+    <!--&lt;!&ndash;<input type="text" v-model="message">&ndash;&gt;-->
+    <!--<input id="inputid" type="text" :value="message" @input="valueChange">-->
+    <!--<h2>{{message}}</h2>-->
+<!--</div>-->
+<!--<script src="../js/vue.js"></script>-->
+<!--<script>-->
+    <!--const app = new Vue({-->
+        <!--el: '#app',-->
+        <!--data: {-->
+            <!--message: "hello"-->
+        <!--},-->
+        <!--methods:{-->
+            <!--valueChange(event){-->
+                <!--this.message = event.target.value-->
+            <!--}-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->
+<div id="app">
+    <!--不使用函数-->
+    <input type="text" :value="message" @input="message = $event.target.value">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: "hello"
+        }
+    })
+</script>
+
+</body>
+</html>

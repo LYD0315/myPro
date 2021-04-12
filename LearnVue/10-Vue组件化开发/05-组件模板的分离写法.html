@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <cpn></cpn>
+</div>
+<!--两种写法,一种是scripts标签，通过type text/x-template写模板 通过id再构建组件-->
+<!--<script type="text/x-template" id="cpn">-->
+<!--<div>-->
+<!--    <h2>-->
+<!--        标题-->
+<!--    </h2>-->
+<!--    <p>我是内容</p>-->
+<!--</div>-->
+<!--</script>-->
+<!--另一种通过template标签写模板，赋值id，再构建组件-->
+<!--组件内部不能访问Vue对象中的数据-->
+<template id="cpn">
+    <div>
+        <h2>
+            {{title}}此处地 title并不能访问到Vue中data定义的title
+        </h2>
+        <p>我是内容</p>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<!--suppress JSAnnotator -->
+<script>
+<!--    可以在组件创建的时候赋予data-->
+    Vue.component('cpn',{
+        template:'#cpn',
+        data(){
+            return {
+               title: 'abc'
+            }
+    }
+    })
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: '你好',
+            title:'我是表头'
+        }
+    });
+</script>
+</body>
+</html>

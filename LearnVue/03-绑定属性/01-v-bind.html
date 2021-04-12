@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--简写 v-bind为 冒号 :-->
+    <img v-bind:src="imgUrl">
+    <a :href="baiduUrl">百度一下</a>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            imgUrl: "https://www.baidu.com/img/PCpad_012830ebaa7e4379ce9a9ed1b71f7507.png",
+            baiduUrl:"https://www.baidu.com"
+        }
+    })
+</script>
+
+</body>
+</html>

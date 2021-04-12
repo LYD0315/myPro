@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    {{message}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: "hello"
+        }
+    })
+</script>
+<script>
+    // const obj  = new Object()
+    // const obj = {
+    //     name:lyd,
+    //     age:18,
+    //     run:function () {
+    //         console.log('吃东西');
+    //     }
+    // }
+
+    //属性的增强写法
+    const name = 'why'
+    const age = 18
+    const height = 1.88
+    //ES5的写法
+    // const  obj = {
+    //     name:name,
+    //     age : age,
+    //     height :height
+    // }
+    // console.log(obj);
+
+    const obj ={
+        name,
+        age,
+        height,
+    }
+    console.log(obj);
+
+    //2.函数增强写法
+    //ES5
+    // const obj = {
+    //     run:function () {
+    //
+    //     }
+    // }
+
+
+    //ES6写法
+    const  obj ={
+        run(){
+
+        }
+    }
+
+    //function  split_string (str){
+    // str.split
+    // }
+    //设计缺陷
+    //split_string(123); 报错
+
+</script>
+</body>
+</html>
